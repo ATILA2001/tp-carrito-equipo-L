@@ -8,20 +8,24 @@
     </figure>
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-        <% foreach (dominio.Articulo articulo in ListaArticulos)
-            {
-        %>
-        <div class="col">
-            <div class="card">
-                <%--<img src="..." class="card-img-top" alt="...">--%>
-                <div class="card-body">
-                    <h5 class="card-title"><%:articulo.Nombre%> </h5>
-                    <p class="card-text"><%:articulo.Descripcion%></p>
-                    <p class="card-text">$ <%:articulo.Precio%></p>
-                </div>
-            </div>
-        </div>
+        <asp:Repeater runat="server" ID="repRepetidor">
+            <ItemTemplate>
+                <div class="col">
+                    <div class="card">
+                        <%--<img src="..." class="card-img-top" alt="...">--%>
+                        <div class="card-body">
+                            <h5 class="card-title"><%#Eval("Nombre")%> </h5>
+                            <p class="card-text"><%#Eval("Descripcion")%></p>
+                            <p class="card-text">$ <%#Eval("Precio")%></p>
+                            <asp:button Text="Ver Detalle" type="button" runat="server" class="btn btn-primary" id="btnDetalle" commandArgument='<%#Eval("Id") %>' commandName="IdArticulo" OnClick="btnDetalle_Click" >
+                            </asp:button>
 
-        <%  } %>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
     </div>
 </asp:Content>
+

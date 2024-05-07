@@ -17,6 +17,15 @@ namespace TPCarrito_equipo_L
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulos = negocio.listar();
+            if (!IsPostBack) { 
+            repRepetidor.DataSource = ListaArticulos;
+            repRepetidor.DataBind();
+            }
+        }
+
+        protected void btnDetalle_Click(object sender, EventArgs e)
+        {
+            string valor = ((Button)sender).CommandArgument;
         }
     }
 }

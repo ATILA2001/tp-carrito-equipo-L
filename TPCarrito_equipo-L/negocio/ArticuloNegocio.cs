@@ -62,6 +62,53 @@ namespace negocio
            
 
         }
+
+        // FALTA Crear procedimiento en base de datos
+        /*public List<Articulo> listarConSp()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("StoredListarArticulos");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Marca = new Marca();
+                    aux.Categoria = new Categoria();
+                    aux.Imagenes = new List<Imagen>();
+                    Imagen iAux = new Imagen();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.CodigoArticulo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.Categoria.Id = (int)datos.Lector["Id"];
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Marca.Id = (int)datos.Lector["Id"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    iAux.Url = (string)datos.Lector["Imagen"];
+                    aux.Imagenes.Add(iAux);
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+        */
+
         public List<Articulo> listarConFiltro (decimal desde, decimal hasta, Marca marca, Categoria categoria)
         {
             List<Articulo> lista = new List<Articulo>();
