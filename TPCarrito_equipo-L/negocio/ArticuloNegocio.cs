@@ -59,8 +59,6 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-           
-
         }
 
         // FALTA Crear procedimiento en base de datos

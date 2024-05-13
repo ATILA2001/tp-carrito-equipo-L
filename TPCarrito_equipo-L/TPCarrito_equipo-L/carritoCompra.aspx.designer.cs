@@ -11,7 +11,7 @@ namespace TPCarrito_equipo_L
 {
 
 
-    public partial class Default
+    public partial class carritoCompra
     {
     }
 }
