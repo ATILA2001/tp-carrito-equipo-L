@@ -34,7 +34,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="color: black"> <b><%: articulo.Nombre %> </h5></b>
                         <p class="card-text" style="color: #4675b9"><%:"$" + articulo.Precio %></p>
-                        <a href="detalleArticulo.aspx?id=<%: articulo.Id %>">Ver detalle</a>
+                        <a href="detalleArticulo.aspx?id=<%: articulo.Id %>" class="btn btn-primary btn-sm" style="border-bottom-color: white">Ver detalle</a>
                     </div>
                 </div>
             </div>
