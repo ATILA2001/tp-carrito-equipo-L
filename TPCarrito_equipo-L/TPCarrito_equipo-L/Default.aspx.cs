@@ -12,17 +12,20 @@ namespace TPCarrito_equipo_L
 {
     public partial class Default : System.Web.UI.Page
     {
-        public List<Articulo> ListaArticulos {  get; set; }
+        public List<Articulo> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            ListaArticulos = negocio.listar();
-            //if (!IsPostBack) { 
-            //repRepetidor.DataSource = ListaArticulos;
-            //repRepetidor.DataBind();
-            //}
-            //dgvArticulos.DataSource = ListaArticulos;
-            //dgvArticulos.DataBind();
+            if (Session["listaArticulos"] != null)
+            {
+                ListaArticulos = (List<Articulo>)Session["listaArticulos"];
+            }
+            else
+            {
+
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                ListaArticulos = negocio.listar();
+                Session.Add("listaArticulos", ListaArticulos);
+            }
         }
 
         protected void btnDetalle_Click(object sender, EventArgs e)

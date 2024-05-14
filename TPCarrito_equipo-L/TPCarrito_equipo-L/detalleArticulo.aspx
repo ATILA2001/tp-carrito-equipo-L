@@ -23,7 +23,7 @@
                 <h3 class="card-title"><%: "$" + articulo.Precio %></h3> <br />
                 </div>
                 <div class="d-grid gap-2 d-md-block">
-                <button type="button" class="btn btn-primary btn-sm">Agregar al carrito</button>
+                <a href="carritoCompra.aspx?id=<%: articulo.Id %>" class="btn btn-primary" style="border-bottom-color: white">Agregar al carrito</a>
                 </div><br />     
 
                 <% primerRegistro = true; %>
@@ -36,4 +36,5 @@
     <%
         }
     %>
+     <a href="/#" class="btn btn-secondary">Volver</a>
 </asp:Content>
