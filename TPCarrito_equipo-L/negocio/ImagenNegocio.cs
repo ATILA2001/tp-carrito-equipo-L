@@ -8,8 +8,8 @@ using dominio;
 
 namespace negocio
 {
-       public class ImagenNegocio
-    {
+        public class ImagenNegocio
+        {
         public List<Imagen> listar()
         {
             List<Imagen> lista = new List<Imagen>();
@@ -44,6 +44,40 @@ namespace negocio
             }
 
         }
+        private Articulo articulo = null;
+        public List<string> listarImgPorArticulo(Articulo articulo)
+        {
+            this.articulo = articulo;
+            AccesoDatos datos = new AccesoDatos();
+            List<string> lista = new List<string>();
+
+            try
+            {
+
+                datos.setearConsulta("select IMAGENES.ImagenUrl from IMAGENES WHERE IMAGENES.IdArticulo = " + articulo.Id);
+                datos.ejecutarLectura();
+
+
+
+                while (datos.Lector.Read())
+                {
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                        lista.Add((string)datos.Lector["ImagenUrl"]);
+                }
+                return lista;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+
         public string searchId(string codArt)
         {
             AccesoDatos datos = new AccesoDatos();

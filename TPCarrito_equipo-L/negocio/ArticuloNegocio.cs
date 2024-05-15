@@ -24,7 +24,8 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion AS Categoria, C.Id, M.Descripcion AS Marca, M.Id, A.Precio, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN IMAGENES AS I ON A.Id = I.IdArticulo");
+                datos.setearConsulta("select A.id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio FROM ARTICULOS A INNER JOIN MARCAS M ON m.Id = A.IdMarca INNER JOIN CATEGORIAS C ON c.Id = A.IdCategoria");
+                //datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion AS Categoria, C.Id, M.Descripcion AS Marca, M.Id, A.Precio, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN IMAGENES AS I ON A.Id = I.IdArticulo");
                 //datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl AS Imagen from ARTICULOS A inner join CATEGORIAS C on A.IdCategoria = c.Id inner join MARCAS M on A.IdMarca = M.Id inner join IMAGENES I on A.Id = I.IdArticulo");
                 //datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion AS Marca, A.IdMarca, A.IdCategoria, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl AS Imagen from ARTICULOS A inner join CATEGORIAS C on A.IdCategoria = c.Id inner join MARCAS M on A.IdMarca = M.Id inner join IMAGENES I on A.Id = I.IdArticulo");
                 datos.ejecutarLectura();
@@ -40,22 +41,22 @@ namespace negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    aux.Categoria.Id = (int)datos.Lector["Id"];
+                    //aux.Categoria.Id = (int)datos.Lector["Id"];
                     aux.Marca.Descripcion = (string)datos.Lector["Marca"];
-                    aux.Marca.Id = (int)datos.Lector["Id"];
+                    //aux.Marca.Id = (int)datos.Lector["Id"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    iAux.Url = (string)datos.Lector["Imagen"];
+                    //iAux.Url = (string)datos.Lector["Imagen"];
                     aux.Imagenes.Add(iAux);
                     lista.Add(aux);
                 }
-                
+
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally 
+            finally
             {
                 datos.cerrarConexion();
             }

@@ -7,7 +7,8 @@
     <figure class="text-center">
         <h1>CARRITO</h1>
     </figure>
-    <asp:GridView runat="server" ID="dgvCarrito" CssClass="table"></asp:GridView>
+    <asp:GridView runat="server" ID="dgvCarrito" class="table"></asp:GridView>
 
     <a href="/#" class="btn btn-secondary">Volver</a>
+    <a href="#" class="btn btn-primary" style="float: right;">Finalizar compra</a>
 </asp:Content>
