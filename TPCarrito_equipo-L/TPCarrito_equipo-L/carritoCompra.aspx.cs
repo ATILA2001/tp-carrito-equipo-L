@@ -16,11 +16,15 @@ namespace TPCarrito_equipo_L
             List<Articulo> carrito;
             carrito = Session["carrito"] != null ? (List<Articulo>)Session["carrito"] : new List<Articulo>();
             Session.Add( "carrito", carrito);
-            int id = int.Parse(Request.QueryString["id"]);
-            List<Articulo> listaOriginal = (List<Articulo>)Session["listaArticulos"];
-            Articulo seleccionado = listaOriginal.Find(x=>x.Id == id);
-            carrito.Add(seleccionado);
-
+            int id = -1;
+            if (Request.QueryString["id"]!=null)
+            {
+                id = int.Parse(Request.QueryString["id"]);
+                List<Articulo> listaOriginal = (List<Articulo>)Session["listaArticulos"];
+                Articulo seleccionado = listaOriginal.Find(x => x.Id == id);
+                carrito.Add(seleccionado);
+            }
+            
             dgvCarrito.DataSource = carrito;
             dgvCarrito.DataBind();
         }
