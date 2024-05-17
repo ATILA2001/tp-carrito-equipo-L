@@ -18,6 +18,8 @@ namespace TPCarrito_equipo_L
             ListaArticulos = negocio.listar();
             string id = Request.QueryString["id"];
             lblId.Text = id;
+
+
         }
     }
 }
