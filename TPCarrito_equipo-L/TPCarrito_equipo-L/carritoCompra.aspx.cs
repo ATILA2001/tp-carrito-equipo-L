@@ -27,7 +27,6 @@ namespace TPCarrito_equipo_L
                     carrito.Add(seleccionado);
                 }else
                 {
-                    //muestra que el articulo ya se agrego
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('El artículo ya está en el carrito. Realice una nueva compra o aguarde una actualizacion de sistema. Disculpe las molestias');", true);
 
 
@@ -36,14 +35,18 @@ namespace TPCarrito_equipo_L
             
             dgvCarrito.DataSource = carrito;
             dgvCarrito.DataBind();
-            decimal total = 0;
-            foreach (Articulo item in carrito)
+            decimal precioTotal = 0;
+            foreach (Articulo articulo in carrito)
             {
-                total += item.Precio;
+                precioTotal += articulo.Precio;
             }
 
-            // Asignar la suma al Text de la etiqueta
-            lblTotal.Text = "Total: $" + total.ToString();
+            lblPrecioTotal.Text = "Precio Total: $" + precioTotal.ToString();
+
         }
+
+        
+
+       
     }
 }

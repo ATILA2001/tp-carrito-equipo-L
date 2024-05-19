@@ -7,10 +7,14 @@
     <figure class="text-center">
         <h1>CARRITO</h1>
     </figure>
-    <asp:GridView runat="server" ID="dgvCarrito" class="table"></asp:GridView>
+    <asp:GridView runat="server" ID="dgvCarrito" class="table">
+    </asp:GridView>
 
+   
+    <asp:Label ID="lblPrecioTotal" runat="server" CssClass="form-control" Text=""></asp:Label>
+
+    <br />
     <a href="/#" class="btn btn-secondary">Volver</a>
     <a href="#" class="btn btn-primary" style="float: right;">Finalizar compra</a>
-     <asp:Label ID="lblTotal" runat="server"  class="btn btn-light" Text="" style="float: right;"></asp:Label>
-   
-</asp:Content>
+    
+     </asp:Content>
