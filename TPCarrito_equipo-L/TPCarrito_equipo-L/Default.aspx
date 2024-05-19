@@ -19,7 +19,7 @@
                     <%--<img src="<%:articulo.Imagenes[0].Url %>" class="card-img-top" style="width: 260px; height: auto;">--%>
                   <%if(!(lista.Count == 0))
                     {
-                        %><img src="<%:lista[0] %>" class="img-thumbnail" style="width: 250px; height: auto; display: block; float: right; margin-right: 10px;"><%
+                        %><img src="<%:lista[0] %>" class="img-thumbnail" style="width: 250px; height: auto; display: block; float: right; margin-right: 10px;" onerror="https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg" ><%
                     }                                                                                                     %>
                     <div class="card-body">
                     <h5 class="card-title" style="color: black; text-align: center"> <b><%: articulo.Nombre %> </h5></b>

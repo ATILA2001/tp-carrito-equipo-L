@@ -22,7 +22,16 @@ namespace TPCarrito_equipo_L
                 id = int.Parse(Request.QueryString["id"]);
                 List<Articulo> listaOriginal = (List<Articulo>)Session["listaArticulos"];
                 Articulo seleccionado = listaOriginal.Find(x => x.Id == id);
-                carrito.Add(seleccionado);
+                if (!carrito.Exists(a => a.Id == seleccionado.Id))
+                {
+                    carrito.Add(seleccionado);
+                }else
+                {
+                    //muestra que el articulo ya se agrego
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('El artículo ya está en el carrito. Realice una nueva compra o aguarde una actualizacion de sistema. Disculpe las molestias');", true);
+
+
+                }
             }
             
             dgvCarrito.DataSource = carrito;

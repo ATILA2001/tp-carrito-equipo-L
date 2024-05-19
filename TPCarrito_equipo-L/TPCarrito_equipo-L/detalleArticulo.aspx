@@ -21,7 +21,8 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<%:lista[0] %>" class=".img-10px"  alt="...">
+                <img src="<%:lista[0] %>"  class="rounded mx-auto d-block" style="width: 260px; height: auto; display: block;  margin-left: 200px;"  alt="..." onerror="https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg">
+
             </div>
             <%
                 int c = lista.Count();
@@ -30,7 +31,7 @@
             %>
 
             <div class="carousel-item">
-                <img src="<%:lista[i] %>" class="max-width: 10px; max-height: 10px; display: block; float: right; margin-right: 10px;" alt="...">
+                <img src="<%:lista[i] %>"  class="rounded mx-auto d-block" style="width: 260px; height: auto; display: block;  margin-left:200px;" alt="..." onerror="https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg">
             </div>
 
 
@@ -47,6 +48,7 @@
         </button>
     </div>
 
+    <hr />
 
     <%--	<img src="<%:lista[0] %>" class="img-thumbnail" style="width: 260px; height: auto; display: block; float: right; margin-right: 10px;">--%>
     <%--<img src="<%:articulo.Imagenes[0].Url %>" class="img-thumbnail" style="width: 260px; height: auto; display: block; float: right; margin-right: 10px;">--%>
