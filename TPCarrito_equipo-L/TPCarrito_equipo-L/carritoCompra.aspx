@@ -11,4 +11,6 @@
 
     <a href="/#" class="btn btn-secondary">Volver</a>
     <a href="#" class="btn btn-primary" style="float: right;">Finalizar compra</a>
+     <asp:Label ID="lblTotal" runat="server"  class="btn btn-light" Text="" style="float: right;"></asp:Label>
+   
 </asp:Content>

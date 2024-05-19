@@ -36,6 +36,14 @@ namespace TPCarrito_equipo_L
             
             dgvCarrito.DataSource = carrito;
             dgvCarrito.DataBind();
+            decimal total = 0;
+            foreach (Articulo item in carrito)
+            {
+                total += item.Precio;
+            }
+
+            // Asignar la suma al Text de la etiqueta
+            lblTotal.Text = "Total: $" + total.ToString();
         }
     }
 }
