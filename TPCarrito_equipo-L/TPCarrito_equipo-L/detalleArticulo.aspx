@@ -4,39 +4,34 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>
-
-        <asp:Label ID="lblId" runat="server" Text="Label" Visible="false"></asp:Label></h1>
-    <%  negocio.ImagenNegocio negocio = new negocio.ImagenNegocio();
+        <asp:Label ID="lblId" runat="server" Text="Label" Visible="false"></asp:Label>
+    </h1>
+    <%  
+        negocio.ImagenNegocio negocio = new negocio.ImagenNegocio();
         List<string> lista = new List<string>();
         foreach (dominio.Articulo articulo in ListaArticulos)
         {
             if (lblId.Text == articulo.Id.ToString())
             {
                 lista = negocio.listarImgPorArticulo(articulo);
-
     %>
-
-
 
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<%:lista[0] %>"  class="rounded mx-auto d-block" style="width: 260px; height: auto; display: block;  margin-left: 200px;"  alt="..." onerror="https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg">
-
+                <img src="<%:lista[0] %>" class="rounded mx-auto d-block custom-carousel-img-size" alt="..." onerror="this.src='https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg'">
             </div>
-            <%
+            <%  
                 int c = lista.Count();
                 for (int i = 1; i < c; i++)
                 {
             %>
-
             <div class="carousel-item">
-                <img src="<%:lista[i] %>"  class="rounded mx-auto d-block" style="width: 260px; height: auto; display: block;  margin-left:200px;" alt="..." onerror="https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg">
+                <img src="<%:lista[i] %>" class="rounded mx-auto d-block custom-carousel-img-size" alt="..." onerror="this.src='https://image.freepik.com/vector-gratis/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg'">
             </div>
-
-
-
-            <% }%>
+            <% 
+                }
+            %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" color="black">
             <span class="badge text-bg-secondary p-3" aria-hidden="true">< </span>
@@ -49,9 +44,6 @@
     </div>
 
     <hr />
-
-    <%--	<img src="<%:lista[0] %>" class="img-thumbnail" style="width: 260px; height: auto; display: block; float: right; margin-right: 10px;">--%>
-    <%--<img src="<%:articulo.Imagenes[0].Url %>" class="img-thumbnail" style="width: 260px; height: auto; display: block; float: right; margin-right: 10px;">--%>
     <div>
         <h5 class="card-title">Nombre de artículo</h5>
         <p class="card-text"><%: articulo.Nombre %></p>
@@ -71,20 +63,16 @@
     </div>
     <br />
 
-
-
-    <%  }%>
-
-
-
-
-
-    <% }%>
-
-
-
+    <%  
+            }
+        }
+    %>
     <a href="/#" class="btn btn-secondary">Volver</a>
+
+    <style>
+        .custom-carousel-img-size {
+            width: 250px; 
+            height: 250px;
+        }
+    </style>
 </asp:Content>
-
-
-
