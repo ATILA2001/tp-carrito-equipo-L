@@ -7,7 +7,7 @@
     <figure class="text-center">
         <h1>CARRITO</h1>
     </figure>
-    <asp:GridView runat="server" ID="dgvCarrito" CssClass="table table-dark table-bordered" AutoGenerateColumns="false" DataKeyNames="Id" OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged">
+    <asp:GridView runat="server" ID="dgvCarrito" CssClass="table table-hover" AutoGenerateColumns="false" DataKeyNames="Id" OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged">
          <Columns>
              <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
              <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
