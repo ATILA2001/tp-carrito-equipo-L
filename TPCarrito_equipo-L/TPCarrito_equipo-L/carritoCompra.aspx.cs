@@ -61,6 +61,13 @@ namespace TPCarrito_equipo_L
             carrito.Remove(seleccionado);
             dgvCarrito.DataSource = carrito;
             dgvCarrito.DataBind();
+            decimal precioTotal = 0;
+            foreach (Articulo articulo in carrito)
+            {
+                precioTotal += articulo.Precio;
+            }
+
+            lblPrecioTotal.Text = "Precio Total: $" + precioTotal.ToString();
         }
     }
 }
