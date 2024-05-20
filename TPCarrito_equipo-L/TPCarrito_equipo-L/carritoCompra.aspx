@@ -7,7 +7,15 @@
     <figure class="text-center">
         <h1>CARRITO</h1>
     </figure>
-    
+    <asp:GridView runat="server" ID="dgvCarrito" CssClass="table table-dark table-bordered" AutoGenerateColumns="false" DataKeyNames="Id" OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged">
+         <Columns>
+             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+             <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+             <asp:BoundField HeaderText="Precio" DataField="Precio" />
+             <asp:CommandField ShowSelectButton="true" SelectText="Eliminar"  />
+        </Columns>   
+    </asp:GridView>
+<%-->>>>>>> Stashed changes
 
     <asp:GridView runat="server" ID="dgvCarrito" class="table" AutoGenerateColumns="false">
         <Columns>
@@ -19,7 +27,7 @@
             <asp:BoundField DataField="Categoria" HeaderText="Categoria" />
             <asp:BoundField DataField="Precio" HeaderText="Precio" />
         </Columns>
-    </asp:GridView>
+    </asp:GridView>--%>
    
     <asp:Label ID="lblPrecioTotal" runat="server" CssClass="form-control" Text=""></asp:Label>
 
