@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,6 +12,7 @@ namespace TPCarrito_equipo_L
 {
     public partial class carritoCompra : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             List<Articulo> carrito;
@@ -30,9 +32,8 @@ namespace TPCarrito_equipo_L
                     }
                     else
                     {
+                        //Solucionado problema de referencia con ScriptManager.
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('El artículo ya está en el carrito. Realice una nueva compra o aguarde una actualizacion de sistema. Disculpe las molestias');", true);
-
-
                     }
                 }
 
